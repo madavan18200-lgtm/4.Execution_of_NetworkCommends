@@ -25,45 +25,21 @@ This commands includes
 <BR>
 • Other IP Commands e.g. show ip route etc.
 <BR>
-##program 
-```
-server.py
-import socket
-from pythonping import ping
 
-s = socket.socket()
-s.bind(("localhost", 8000))
-s.listen(5)
 
-print("Server started...")
-
-c, addr = s.accept()
-print("Connected to", addr)
-
-while True:
-    hostname = c.recv(1024).decode()
-
-    if not hostname:
-        break
-
-    try:
-        result = ping(hostname, verbose=False)
-        c.send(str(result).encode())
-    except Exception:
-        c.send("Not Found".encode())
-client.py
-import socket
-
-s = socket.socket()
-s.connect(("localhost", 8000))
-
-while True:
-    ip = input("Enter the website you want to ping: ")
-    s.send(ip.encode())
-    print(s.recv(1024).decode())
-    ```
 ## Output
-<img width="1052" height="589" alt="image" src="https://github.com/user-attachments/assets/b29b66a4-3c8c-40a7-ae7e-b2205479afad" />
+<img width="712" height="561" alt="Screenshot 2026-05-29 124022" src="https://github.com/user-attachments/assets/d9db6619-e997-44c7-837b-778e4bf2b202" />
+<img width="585" height="114" alt="Screenshot 2026-05-29 123744" src="https://github.com/user-attachments/assets/3d1d416b-0e5d-4799-a4bc-c9ec182f1f74" />
+<img width="484" height="200" alt="Screenshot 2026-05-29 123625" src="https://github.com/user-attachments/assets/f6bd6fbf-82f0-4a30-bacb-8a38e23a4352" />
+<img width="671" height="243" alt="Screenshot 2026-05-29 123357" src="https://github.com/user-attachments/assets/d1b1b319-5f9f-4e99-a9cd-99e7c5ef957e" />
+<img width="583" height="652" alt="Screenshot 2026-05-29 123323" src="https://github.com/user-attachments/assets/cf5520ab-215e-47b8-9f10-44ca845cd641" />
+<img width="712" height="329" alt="Screenshot 2026-05-29 123904" src="https://github.com/user-attachments/assets/de8b4f6d-272e-45a0-a054-2d2826c7880d" />
+<img width="332" height="144" alt="Screenshot 2026-05-29 123653" src="https://github.com/user-attachments/assets/3f65f520-5bb3-47b1-a69e-5de781712262" />
+<img width="826" height="319" alt="Screenshot 2026-05-29 123524" src="https://github.com/user-attachments/assets/1391f64d-9ffa-4be4-92ce-177f9e45d9cd" />
+<img width="210" height="144" alt="Screenshot 2026-05-29 123349" src="https://github.com/user-attachments/assets/e6f7d676-4479-4141-bff0-7cb7a3a29528" />
+<img width="1074" height="787" alt="Screenshot 2026-05-29 123253" src="https://github.com/user-attachments/assets/d52e71d8-4673-4337-984e-1ba47d12105b" />
+
+
 
 
 ## Result
